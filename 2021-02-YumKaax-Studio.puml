@@ -1,0 +1,300 @@
+@startuml studio
+
+title Yum Kaax Production Studio Equipment
+
+!$BGCOLOR = "white"
+!include https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/cerulean/puml-theme-cerulean.puml
+
+left to right direction
+
+rectangle "PC (Windows 8)" as Desktop {
+  component "Firewire" as DesktopFirewall
+
+  rectangle "Top USB" as TopUSB {
+    component "USB1" as DesktopUSB1
+    component "USB2" as DesktopUSB2
+    component "USB3" as DesktopUSB3
+    component "USB4" as DesktopUSB4
+  }
+  rectangle "Bottom USB" as BottomUSB {
+    component "USB5" as DesktopUSB5
+    component "USB6" as DesktopUSB6
+
+  }
+  rectangle "Front USB" as BottomUSB {
+    component "USB1" as DesktopFrontUSB1
+    component "USB2" as DesktopFrontUSB2
+
+  }
+  rectangle "RME HDSP (PCI)" as RMEHDSP {
+    rectangle "MIDI" as HDSPMIDI {
+      component "OUT 1" as HDSPMIDIOUT1
+      component "IN 1" as HDSPMIDIIN1
+      component "OUT 2" as HDSPMIDIOUT2
+      component "IN 2" as HDSPMIDIIN2
+
+    }
+    rectangle "ADAT1" as ADAT1 {
+      component "ADAT1 (IN)" as HDSPADAT1In
+      component "ADAT1 (OUT)" as HDSPADAT1Out
+    }
+    rectangle "ADAT2" as ADAT2{
+      component "ADAT2 (IN)" as HDSPADAT2In
+      component "ADAT2 (OUT)" as HDSPADAT2Out
+
+    }
+    rectangle "ADAT3" as ADAT3{
+      component "ADAT3 (IN)" as HDSPADAT3In
+      component "ADAT3 (OUT)" as HDSPADAT3Out
+    }
+  }
+
+}
+
+rectangle "Speakers" as Speakers {
+  rectangle "Subwoofer" {
+    component "Audio IN (L)" as SubAudioInL
+    component "Audio IN (R)" as SubAudioInR
+    component "Audio OUT (L)" as SubAudioOutL
+    component "Audio OUT (R)" as SubAudioOutR
+  }
+
+  rectangle "Dynaudio Air 6" as Air6 {
+    component "Audio IN (L)" as Air6AudioInL
+    component "Audio IN (R)" as Air6AudioInR
+  }
+  rectangle "Adam A7X" as AdamA7X {
+    component "Audio IN (L)" as A7XAudioInL
+    component "Audio IN (R)" as A7XAudioInR
+
+
+  }
+  rectangle "Monitor Controller" as MC {
+    component "Audio IN (L)" as MCAudioInpL
+    component "Audio IN (R)" as MCAudioInpR
+    component "Audio OUT (L)" as MCAudioOutL
+    component "Audio OUT (R)" as MCAudioOutR
+  }
+
+}
+
+rectangle "Accessories" as Ting {
+  component "Mouse" AS mouse
+ component "Keyboard" as keyboard
+}
+rectangle "External Instruments" as Instruments {
+  rectangle "Master Keyboard - Code49" as CODE49 {
+    component "USB" as CODE49USB
+  }
+  rectangle "Roland Juno 6" as juno6 {
+    rectangle "Audio" as JUNO6AUDIO {
+      component "IN" as JUNO6AUDIOIN
+      component "OUT" as JUNO6AUDIOOUT
+    }
+  }
+  rectangle "Roland Gaia" as GAIA {
+    component "USB" as GAIAUSB
+    rectangle "Audio" as GAIAAUDIO {
+      component "IN" as GAIAAUDIOIN
+      component "OUT" as GAIAAUDIOOUT
+    }
+  }
+
+  rectangle "Novation Bass Station" as BS {
+    component "USB" as BSUSB
+    rectangle "Audio" as BSAUDIO {
+      component "IN" as BSAUDIOIN
+      component "OUT" as BSAUDIOOUT
+    }
+  }
+
+  rectangle "Access Virus B" as VIRUSB {
+    rectangle "MIDI" as VIRUSBMIDI {
+      component "OUT" as VIRUSBMIDIOUT
+      component "IN" as VIRUSBMIDIIN
+
+    }
+    rectangle "Audio" as VIRUSBAUDIO {
+      component "IN" as VIRUSBAUDIOIN
+      component "OUT" as VIRUSBAUDIOOUT
+    }
+  }
+  rectangle "Nord Lead 4" as NL4 {
+    component "USB" as NL4USB
+    rectangle "Audio" as NL4AUDIO {
+      component "IN" as NL4AUDIOIN
+      component "OUT" as NL4AUDIOOUT
+    }
+  }
+  rectangle "Novation Peak" as PEAK {
+    component "USB" as PEAKUSB
+    rectangle "Audio" as PEAKAUDIO {
+      component "IN" as PEAKAUDIOIN
+      component "OUT" as PEAKAUDIOOUT
+    }
+  }
+  rectangle "Access Virus TI" as VirusTI {
+    component "USB" as VirusTIUSB
+    rectangle "Audio" as VirusTIAUDIO {
+      component "IN 1" as VirusTIAUDIOIN1
+      component "OUT 1" as VirusTIAUDIOOUT1
+    }
+  }
+  rectangle "Yamaha DX7" as DX7 {
+    rectangle "MIDI" as DX7MIDI {
+      component "OUT" as DX7MIDIOUT
+      component "IN" as DX7MIDIIN
+    }
+    rectangle "Audio" as DX7AUDIO {
+      component "OUT" as DX7AUDIOOUT
+    }
+  }
+}
+
+rectangle "HUB USB Hub" as HUBUSBHub {
+  component "USB" as HUBUSBMain
+  component "Port 1" as HUBUSB1
+  component "Port 2" as HUBUSB2
+  component "Port 3" as HUBUSB3
+  component "Port 4" as HUBUSB4
+  component "Port 5" as HUBUSB5
+  component "Port 6" as HUBUSB6
+  component "Port 7" as HUBUSB7
+  component "Port 8" as HUBUSB8
+  component "Port 9" as HUBUSB9
+  component "Port 10" as HUBUSB10
+
+
+
+}
+rectangle "External Audio Interfaces" as AudioIntefaces {
+  rectangle "RME FF400" as RMEFF400 {
+    rectangle "ADAT" as FF400ADAT {
+      component "ADAT (IN)" as FF400ADATIn
+      component "ADAT (OUT)" as FF400ADATOut
+
+    }
+    rectangle "MIDI" as FF400MIDI {
+      component "OUT 1" as FF400MIDIOUT1
+      component "IN 1" as FF400MIDIIN1
+      component "OUT 2" as FF400MIDIOUT2
+      component "IN 2" as FF400MIDIIN2
+
+    }
+
+    rectangle "OUT" as FF400OUT {
+      component "OUT 1" as FF400OUT1
+      component "OUT 2" as FF400OUT2
+      component "OUT 3" as FF400OUT3
+      component "OUT 4" as FF400OUT4
+      component "OUT 5" as FF400OUT5
+      component "OUT 6" as FF400OUT6
+      component "OUT 7" as FF400OUT7
+      component "OUT 8" as FF400OUT8
+    }
+
+    rectangle "IN" as FF400IN {
+      component "IN 1" as FF400IN1
+      component "IN 2" as FF400IN2
+      component "IN 3" as FF400IN3
+      component "IN 4" as FF400IN4
+      component "IN 5" as FF400IN5
+      component "IN 6" as FF400IN6
+      component "IN 7" as FF400IN7
+      component "IN 8" as FF400IN8
+    }
+
+
+  }
+
+  rectangle "ALESIS" as ALESIS {
+    rectangle "ADAT" as ALESISADAT {
+      component "ADAT (IN)" as ALESISADATIn
+      component "ADAT (OUT)" as ALESISADATOut
+
+    }
+
+    rectangle "OUT" as ALESISOUT {
+      component "OUT 1" as ALESISOUT1
+      component "OUT 2" as ALESISOUT2
+      component "OUT 3" as ALESISOUT3
+      component "OUT 4" as ALESISOUT4
+      component "OUT 5" as ALESISOUT5
+      component "OUT 6" as ALESISOUT6
+      component "OUT 7" as ALESISOUT7
+      component "OUT 8" as ALESISOUT8
+    }
+
+    rectangle "IN" as ALESISIN {
+      component "IN 1" as ALESISIN1
+      component "IN 2" as ALESISIN2
+      component "IN 3" as ALESISIN3
+      component "IN 4" as ALESISIN4
+      component "IN 5" as ALESISIN5
+      component "IN 6" as ALESISIN6
+      component "IN 7" as ALESISIN7
+      component "IN 8" as ALESISIN8
+    }
+  }
+
+  rectangle "SORT" as SORT {
+    rectangle "ADAT" as SORTADAT {
+      component "ADAT (IN)" as SORTADATIn
+      component "ADAT (OUT)" as SORTADATOut
+
+    }
+
+    rectangle "OUT" as SORTOUT {
+      component "OUT 1" as SORTOUT1
+      component "OUT 2" as SORTOUT2
+      component "OUT 3" as SORTOUT3
+      component "OUT 4" as SORTOUT4
+      component "OUT 5" as SORTOUT5
+      component "OUT 6" as SORTOUT6
+      component "OUT 7" as SORTOUT7
+      component "OUT 8" as SORTOUT8
+    }
+
+    rectangle "IN" as SORTIN {
+      component "IN 1" as SORTIN1
+      component "IN 2" as SORTIN2
+      component "IN 3" as SORTIN3
+      component "IN 4" as SORTIN4
+      component "IN 5" as SORTIN5
+      component "IN 6" as SORTIN6
+      component "IN 7" as SORTIN7
+      component "IN 8" as SORTIN8
+    }
+  }
+}
+
+mouse -down-> HUBUSB10
+  keyboard -down-> HUBUSB9
+
+'ADAT Connections
+FF400ADATIn -down-> HDSPADAT1Out
+FF400ADATOut -down-> HDSPADAT1In
+ALESISADATIn -down-> HDSPADAT2Out
+ALESISADATOut -down-> HDSPADAT2Out
+SORTADATIn -down-> HDSPADAT3Out
+SORTADATOut -down-> HDSPADAT3In
+
+'Audio COnnections
+FF400IN1 -down-> Air6AudioInL
+FF400IN2 -down-> Air6AudioInR
+FF400IN3 -down-> MCAudioInpL
+FF400IN4 -down-> MCAudioInpR
+MCAudioOutL -down-> SubAudioInL
+MCAudioOutR -down-> SubAudioInR
+SubAudioOutL -down-> A7XAudioInL
+SubAudioOutR -down-> A7XAudioInR
+
+
+'USB Connections
+HUBUSBMain -down-> DesktopUSB6
+VirusTIUSB -down-> DesktopUSB1
+BSUSB -down-> DesktopFrontUSB1
+GAIAUSB -down-> DesktopUSB6
+NL4USB -down-> DesktopUSB3
+
+@enduml
