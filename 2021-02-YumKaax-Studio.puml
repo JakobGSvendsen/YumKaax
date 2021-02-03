@@ -5,7 +5,8 @@ title Yum Kaax Production Studio Equipment
 !$BGCOLOR = "white"
 !include https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/cerulean/puml-theme-cerulean.puml
 
-left to right direction
+'left to right direction
+
 
 rectangle "PC (Windows 8)" as Desktop {
   component "Firewire" as DesktopFirewall
@@ -275,7 +276,7 @@ mouse -down-> HUBUSB10
 FF400ADATIn -down-> HDSPADAT1Out
 FF400ADATOut -down-> HDSPADAT1In
 ALESISADATIn -down-> HDSPADAT2Out
-ALESISADATOut -down-> HDSPADAT2Out
+ALESISADATOut -down-> HDSPADAT2In
 SORTADATIn -down-> HDSPADAT3Out
 SORTADATOut -down-> HDSPADAT3In
 
